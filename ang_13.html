@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="hr">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<html>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <body>
+    <p>Click the table headers to change the sorting order:</p>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-  </head>
-
-  <body style="background-color: #2cc3c3">
     <div ng-app="myApp" ng-controller="namesCtrl">
-      <p>Looping with objects:</p>
-      <ul>
-        <li ng-repeat="x in names | orderBy:'name'">
-          {{ x.name + ', ' + x.country }}
-        </li>
-      </ul>
+      <table border="1" width="100%">
+        <tr>
+          <th ng-click="orderByMe('name')">Name</th>
+          <th ng-click="orderByMe('country')">Country</th>
+        </tr>
+        <tr ng-repeat="x in names | orderBy:myOrderBy">
+          <td>{{x.name}}</td>
+          <td>{{x.country}}</td>
+        </tr>
+      </table>
     </div>
 
     <script>
@@ -34,6 +35,9 @@
           { name: "Mary", country: "England" },
           { name: "Kai", country: "Norway" },
         ];
+        $scope.orderByMe = function (x) {
+          $scope.myOrderBy = x;
+        };
       });
     </script>
   </body>
