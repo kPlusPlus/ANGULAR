@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  </head>
+
+  <body style="background-color: #2cc3c3">
+    <div ng-app="myApp" ng-controller="namesCtrl">
+      <p>Looping with objects:</p>
+      <ul>
+        <li ng-repeat="x in names | orderBy:'name'">
+          {{ x.name + ', ' + x.country }}
+        </li>
+      </ul>
+    </div>
+
+    <script>
+      angular.module("myApp", []).controller("namesCtrl", function ($scope) {
+        $scope.names = [
+          { name: "Žapo", country: "Slovenija" },
+          { name: "Čizmo", country: "Makedonija" },
+          { name: "Ćapo", country: "Bosnian" },
+          { name: "Žikić", country: "Kosovo" },
+          { name: "Đekna", country: "Bosnian" },
+          { name: "Jani", country: "Norway" },
+          { name: "Carl", country: "Sweden" },
+          { name: "Margareth", country: "England" },
+          { name: "Hege", country: "Norway" },
+          { name: "Joe", country: "Denmark" },
+          { name: "Gustav", country: "Sweden" },
+          { name: "Birgit", country: "Denmark" },
+          { name: "Mary", country: "England" },
+          { name: "Kai", country: "Norway" },
+        ];
+      });
+    </script>
+  </body>
+</html>
