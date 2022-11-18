@@ -1,4 +1,4 @@
 app.controller("myCtrl", function($scope) {
     $scope.firstName = "John";
-    $scope.lastName= "Doe Doe";
+    $scope.lastName= "Doe Doe @";
   }); 
