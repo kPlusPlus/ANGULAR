@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="hr">
+  <meta charset="utf-8" />
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+      <h1>{{myHeader}}</h1>
+    </div>
+    <div>Kako da napišem šđčćž</div>
+    <script>
+      var app = angular.module("myApp", []);
+      app.controller("myCtrl", function ($scope, $timeout) {
+        $scope.myHeader = "Bok Mali Perica";
+        $timeout(function () {
+          $scope.myHeader = "Kada sam bio mali?";
+        }, 2000);
+        $timeout(function () {
+          $scope.myHeader = "Kako si danas ?";
+        }, 5000);
+        $timeout(function () {
+          $scope.myHeader =
+            "Možda ni sam ne znaš za sve to<br>Kako je biti čovjek";
+        }, 5000);
+      });
+    </script>
+  </body>
+</html>
