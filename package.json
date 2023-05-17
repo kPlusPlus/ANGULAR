@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@angular/platform-browser": "^16.0.1",
+    "zone.js": "^0.13.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  }
+}
